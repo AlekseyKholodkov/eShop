@@ -1,0 +1,93 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--
+    Servlet#5-1 time 1:43:25
+    Spring#8-1 time 1:35:10
+    -->
+    <servlet>
+        <servlet-name>productController</servlet-name>
+        <servlet-class>com.kholodkov.controller.ProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productController</servlet-name>
+        <url-pattern>/product.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productAllController</servlet-name>
+        <servlet-class>com.kholodkov.controller.ProductAllController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productAllController</servlet-name>
+        <url-pattern>/productAll.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productAddToCart</servlet-name>
+        <servlet-class>com.kholodkov.controller.ProductAddToCartController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productAddToCart</servlet-name>
+        <url-pattern>/productAddToCart.do</url-pattern>
+    </servlet-mapping>
+
+    <!--MVCDemoView-->
+    <servlet>
+        <servlet-name>mvcDemo</servlet-name>
+        <servlet-class>com.kholodkov.controller.demo.MVCDemoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mvcDemo</servlet-name>
+        <url-pattern>/mvcDemo.do</url-pattern>
+    </servlet-mapping>
+
+    <!--cookie demo-->
+    <servlet>
+        <servlet-name>cookieDemo</servlet-name>
+        <servlet-class>com.kholodkov.controller.demo.cookieDemoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cookieDemo</servlet-name>
+        <url-pattern>/cookieDemo.do</url-pattern>
+    </servlet-mapping>
+
+    <!--session demo-->
+    <servlet>
+        <servlet-name>sessionDemo</servlet-name>
+        <servlet-class>com.kholodkov.controller.demo.SessionDemoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sessionDemo</servlet-name>
+        <url-pattern>/sessionDemo</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <!--time in minute-->
+        <session-timeout>240</session-timeout>
+    </session-config>
+
+    <!--Spring ApplicationContext instantiation for web applications (Spring Reference 4.1.5 RELEASE 5.15.4)-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:daoContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+</web-app>
